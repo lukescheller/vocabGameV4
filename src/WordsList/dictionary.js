@@ -11,12 +11,13 @@ let wordsV4 = [
   "inordinate",
   "foppish",
   "appoint",
-  "lap",
   "redound",
   "confer",
   "fulsome",
   "menial",
-  "fuck",
+  "connoting",
+  "sycophant",
+  "contempt",
 ];
 
 export default wordsV4;
