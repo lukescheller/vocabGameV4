@@ -1,19 +1,18 @@
 const defineWord = (obj) => {
   console.log(obj);
-  return `
-  ${obj.word}\n
-  1. ${obj.meanings[0].definitions[0].definition}\n
-  2. ${
-    obj.meanings[0].definitions.length > 1
-      ? obj.meanings[0].definitions[1].definition
-      : "second definition n/a"
-  }\n
-  3. ${
-    obj.meanings[0].definitions.length > 2
-      ? obj.meanings[0].definitions[2].definition
-      : "third definition n/a"
-  }\n
-  -${obj.meanings[0].partOfSpeech}`;
+  //get all definitions from each array
+  let def = [];
+  obj.meanings.forEach((d) => {
+    d.definitions.forEach((m) => {
+      def.push(m.definition);
+    });
+  });
+  //create string to be displayed
+  let str = `${obj.word} \n`;
+  for (let x = 0; x < def.length; x++) {
+    str += `${x + 1}. ${def[x]} \n`;
+  }
+  return str;
 };
 
 export default defineWord;

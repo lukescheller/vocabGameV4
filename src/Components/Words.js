@@ -12,6 +12,7 @@ import defineWord from "../HelperFunctions/defineWord";
 import throwMeAFricknBoneHere from "../HelperFunctions/throwMeAFricknBoneHere";
 //stylez
 import { stylezSheet, flexDiv } from "../stylez/stylezSheet";
+import { Button, Card } from "react-bootstrap";
 
 const Words = () => {
   const dispatch = useDispatch();
@@ -27,34 +28,40 @@ const Words = () => {
     <div style={flexDiv}>
       {dictionary.map((w, index, key) => {
         return (
-          <div key={index} style={stylezSheet}>
-            <p>{scrambleWord(w[0].word)}</p>
-            <button
-              style={{ margin: "2.5px" }}
-              word={w[0].word}
-              onClick={(e) =>
-                dispatch(removeWord(e.target.getAttribute("word")))
-              }
-            >
-              remove
-            </button>
-            <button
-              style={{ margin: "2.5px" }}
-              onClick={() => {
-                alert(defineWord(w[0]));
-              }}
-            >
-              Definition
-            </button>
-            <button
-              style={{ margin: "2.5px" }}
-              onClick={() => {
-                alert(throwMeAFricknBoneHere(w[0].word));
-              }}
-            >
-              tip
-            </button>
-          </div>
+          <Card style={stylezSheet}>
+            <Card.Body>
+              <h4>{index + 1}</h4>
+              <Card.Title>{scrambleWord(w[0].word)}</Card.Title>
+              <Button
+                variant="success"
+                style={{ margin: "2px" }}
+                onClick={() => {
+                  alert(defineWord(w[0]));
+                }}
+              >
+                Definition
+              </Button>
+              <Button
+                variant="primary"
+                style={{ margin: "2px" }}
+                onClick={() => {
+                  alert(throwMeAFricknBoneHere(w[0]));
+                }}
+              >
+                Tip
+              </Button>
+              <Button
+                variant="danger"
+                style={{ margin: "2.5px" }}
+                word={w[0].word}
+                onClick={(e) =>
+                  dispatch(removeWord(e.target.getAttribute("word")))
+                }
+              >
+                Remove
+              </Button>
+            </Card.Body>
+          </Card>
         );
       })}
     </div>
