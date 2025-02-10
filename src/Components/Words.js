@@ -28,7 +28,7 @@ const Words = () => {
     <div style={flexDiv}>
       {dictionary.map((w, index, key) => {
         return (
-          <Card style={stylezSheet}>
+          <Card style={stylezSheet} key={index}>
             <Card.Body>
               <h4>{index + 1}</h4>
               <Card.Title>{scrambleWord(w[0].word)}</Card.Title>
