@@ -1,5 +1,4 @@
 const defineWord = (obj) => {
-  console.log(obj);
   //get all definitions from each array
   let def = [];
   obj.meanings.forEach((d) => {

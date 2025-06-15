@@ -10,6 +10,8 @@ import scrambleWord from "../HelperFunctions/scrambleWord";
 import shuffleArray from "../HelperFunctions/shuffleArray";
 import defineWord from "../HelperFunctions/defineWord";
 import throwMeAFricknBoneHere from "../HelperFunctions/throwMeAFricknBoneHere";
+import firstLast from "../HelperFunctions/firstLast";
+import firstClue from "../HelperFunctions/firstClue";
 //stylez
 import { stylezSheet, flexDiv } from "../stylez/stylezSheet";
 import { Button, Card } from "react-bootstrap";
@@ -31,6 +33,7 @@ const Words = () => {
           <Card style={stylezSheet} key={index}>
             <Card.Body>
               <h4>{index + 1}</h4>
+              {firstLast(w[0].word)}
               <Card.Title>{scrambleWord(w[0].word)}</Card.Title>
               <Button
                 variant="success"
@@ -60,6 +63,9 @@ const Words = () => {
               >
                 Remove
               </Button>
+              <div style={{ margin: "5px", fontStyle: "italic" }}>
+                {firstClue(w[0])}
+              </div>
             </Card.Body>
           </Card>
         );
