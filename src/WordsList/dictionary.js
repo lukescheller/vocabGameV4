@@ -1,6 +1,6 @@
 import doubleCheck from "../HelperFunctions/findDouble";
 import scrambleArray from "../HelperFunctions/scrambleArray";
-//only12
+//only 8
 import only20 from "../HelperFunctions/only20";
 
 let wordsV4 = [
@@ -135,8 +135,39 @@ let wordsV4 = [
   "surreptitious",
   "punctuate",
   "prophetic",
+  "impervious",
+  "vector",
+  "heed",
+  "preternatural",
+  "protuberance",
+  "tithe",
+  "concussive",
+  "strafing",
+  "conviction",
+  "waver",
+  "grime",
+  "administer",
   "endorse",
   "predicate",
+  "deft",
+  "turbid",
+  "manifest",
+  "palpable",
+  "indubitable",
+  "gaggle",
+  "goad",
+  "cerebral",
+  "antagonist",
+  "adherent",
+  "surge",
+  "rebuff",
+  "domain",
+  "emigrate",
+  "entice",
+  "rigor",
+  "waive",
+  "assurance",
+  "stipulation",
 ];
 
 wordsV4 = scrambleArray(wordsV4);
